@@ -1,0 +1,64 @@
+Q1.write an sql query to print all workers details from the worker table order by FIRST_NAME Asending
+
+SELECT * FROM worker  
+ORDER BY FIRST_NAME ASC;
+
+Q2.write a sql queries.select * from worker order by first_name;
+
+SELECT * FROM worker  
+ORDER BY FIRST_NAME;
+
+Q3.select * from worker order by first_name, department desc;
+
+SELECT * FROM worker  
+ORDER BY FIRST_NAME ASC, DEPARTMENT DESC;
+
+Q4.select * from worker where first_name!='Vipul' and first_name!='Satish';
+
+SELECT * FROM worker  
+WHERE FIRST_NAME != 'Vipul' AND FIRST_NAME != 'Satish';
+
+Q5.Write an SQL query to print details of the Workers whose FIRST_NAME ends with 'h' and contains six alphabets
+
+SELECT * FROM worker  
+WHERE FIRST_NAME LIKE '_____h';
+
+Q6.select count(worker_id) from worker where department='Admin';
+SELECT COUNT(WORKER_ID)  
+FROM worker  
+WHERE DEPARTMENT = 'Admin';
+
+Q.7select first_name, last_name from worker where salary>=50000 and salary<=100000;
+SELECT FIRST_NAME, LAST_NAME  
+FROM worker  
+WHERE SALARY >= 50000 AND SALARY <= 100000;
+
+
+Q.8select count(worker_id), department from worker group by department order by department;
+
+SELECT COUNT(WORKER_ID) AS Worker_Count, DEPARTMENT  
+FROM worker  
+GROUP BY DEPARTMENT  
+ORDER BY DEPARTMENT;
+
+Q9.select w.* from worker w, worker d where w.worker_id!=d.worker_id and w.salary=d.salary;
+
+SELECT w.*  
+FROM worker w, worker d  
+WHERE w.worker_id != d.worker_id  
+AND w.salary = d.salary;
+
+Q10.select department from worker where department in (select department from worker group by department having count(*)<3
+
+SELECT DEPARTMENT  
+FROM worker  
+WHERE DEPARTMENT IN (  
+    SELECT DEPARTMENT  
+    FROM worker  
+    GROUP BY DEPARTMENT  
+    HAVING COUNT(*) < 3  
+);
+
+
+
+
